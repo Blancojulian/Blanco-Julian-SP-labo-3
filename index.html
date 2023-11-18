@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperatorio primer parcial</title>
+
+    <script type="module" defer src="./js/main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="datos">
+            <div id="toggle-operaciones">
+                <i class='bx bx-plus-circle'></i>
+                <span >Operaciones</span>
+            </div>
+            <hr>
+            <div id="operaciones" class="display-none">
+                <h2>Form Datos</h2>
+                <form action="" id="form-datos">
+                    <div>
+                        <label class="form-label" for="filtro">Tipo</label>
+                        <select class="form-select filtro" name="filtro">
+                            <option value="todos" selected>Todos</option>
+                            <option value="futbolista">Futbolista</option>
+                            <option value="profesional">Profesional</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label" for="promedio">Calcular la edad Promedio</label>
+                        <input class="form-control" type="text" name="promedio" id="">
+                        <button class="btn btn-secondary" id="btn-calcular">Calcular</button>
+                    </div>
+                    
+                    <div class="opciones-columnas">
+                        <div class="container-checkbox">
+                        
+                        </div>
+                        <div class="container-botones-seleccionar">
+                            <button id="btn-seleccionar" class="boton boton-seleccionar btn-azul">Seleccionar todas</button>
+                            <button id="btn-deseleccionar" class="boton boton-seleccionar btn-rojo">Deseleccionar todas</button>        
+                        </div>
+                    </div>
+                </form>
+                <div class="container-botones">
+                    <!--<button id="btn-agregar" class="boton">Agregar</button>-->
+                    <button id="btn-guardar" class="boton btn-rojo">Guardar lista</button>
+                    
+                </div>
+
+            </div>
+            <h2>Formulario Lista</h2>
+            
+            <div class="container-tabla">
+                <table id="tabla-datos">
+                    <thead>
+                        <tr class="encabezado-tabla">
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                    </tbody>
+                </table>
+            </div>
+            <div class="container-btn-agregar-elemento">
+                <button id="btn-agregar-elemento">Agregar elemento</button>
+            </div>
+            
+
+        </div>
+        <div class="abm display-none">
+            <form action="" id="form-abm">
+                <h2>Formulario ABM</h2>
+                <h3 id="titulo-abm"></h3>
+                
+                <div class="display-none">
+                    <label class="form-label" for="id">Id</label>
+                    <input class="form-control" type="number" name="id" disabled>
+                </div>
+                <div>
+                    <label class="form-label" for="nombre">Nombre</label>
+                    <input class="form-control" type="text" name="nombre">
+                </div>
+                <div>
+                    <label class="form-label" for="apellido">Apellido</label>
+                    <input class="form-control" type="text" name="apellido">
+                </div>
+                <div>
+                    <label class="form-label" for="edad">Edad</label>
+                    <input class="form-control" type="number" name="edad">
+                </div>
+                                
+                <div class="opcion-tipo">
+                    <label class="form-label" for="tipo">Tipo</label>
+                    <select class="form-select tipo" name="tipo">
+                        <option value="" selected>Seleccionar</option>
+                        <option value="futbolista">Futbolista</option>
+                        <option value="profesional">Profesional</option>
+                    </select>
+                </div>
+
+                <div class="display-none opciones-futbolista">
+                    <div>
+                        <label class="form-label" for="equipo">Equipo</label>
+                        <input class="form-control" type="text" name="equipo">
+                    </div>
+                    <div>
+                        <label class="form-label" for="posicion">Posicion</label>
+                        <input class="form-control" type="text" name="posicion">
+                    </div>
+                    <div>
+                        <label class="form-label" for="cantidadGoles">Cantidad de Goles</label>
+                        <input class="form-control" type="number" name="cantidadGoles">
+                    </div>
+                </div>
+
+                <div class="display-none opciones-profesional">
+                    <div>
+                        <label class="form-label" for="titulo">Titulo</label>
+                        <input class="form-control" type="text" name="titulo">
+                    </div>
+                    <div>
+                        <label class="form-label" for="facultad">Facultad</label>
+                        <input class="form-control" type="text" name="facultad">
+                    </div>
+                    <div>
+                        <label class="form-label" for="añoGraduacion">Año de Graduacion</label>
+                        <input class="form-control" type="number" name="añoGraduacion">
+                    </div>
+                </div>
+                
+                <br>
+
+                <input id="btn-abm" type="submit" class="boton btn-azul" value="Aceptar">
+                <input type="reset" class="boton btn-rojo" value="Cancelar">
+            </form>
+        </div>
+    </main>
+
+    <div id="modal" class="display-none modal-container fondo-modal">
+        <div class="contenido-modal">
+            <h2 class="titulo-modal">titulo modal</h2>
+            <p class="texto-modal">texto modal</p>
+            <div class="botones-modal">
+                <button class="btn-modal btn-modal-aceptar btn-azul">Aceptar</button>
+                <button class="btn-modal btn-modal-cancelar btn-rojo">Cancelar</button>
+            </div>
+        </div>  
+    </div>
+
+    <div id="loader" class="display-none loader-container">
+        <div class="loader"></div>
+
+    </div>
+    <footer></footer>
+    
+</body>
+</html>
